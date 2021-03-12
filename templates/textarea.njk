@@ -1,0 +1,7 @@
+<div class="field" data-type="{{ attributes.type }}" data-name="{{ attributes.name }}">
+    {% include "./partials/label.njk" %}
+    {% include "./partials/description.njk" %}
+    <textarea class="{{ html.className | join(' ') }}" {% for key, value in attributes %}{{ key }}="{{ value }}" {% endfor %}>
+        {{ attributes.value }}
+    </textarea>
+</div>
