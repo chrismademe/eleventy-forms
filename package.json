@@ -15,7 +15,7 @@
   },
   "keywords": [
     "eleventy",
-    "forms"
+    "eleventy-plugin"
   ],
   "author": "Chris Galbraith",
   "license": "MIT",
