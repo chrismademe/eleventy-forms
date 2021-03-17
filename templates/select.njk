@@ -3,7 +3,7 @@
     {% include "./partials/description.njk" %}
     <select class="{{ html.className | join(' ') }}" {% for key, value in attributes %}{{ key }}="{{ value }}" {% endfor %}>
         {% for name, value in options %}
-            <option name="{{ name }}">{{ value }}</option>
+            <option value="{{ name }}">{{ value }}</option>
         {% endfor %}
     </select>
 </div>
