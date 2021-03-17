@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const forms = require('./lib/loadConfig')();
 const Form = require('./lib/classes/Form');
 
@@ -9,7 +10,7 @@ module.exports = (eleventyConfig) => {
             throw new Error(`No form was found with the name ${name}, check your eleventyForms.js config file.`);
         }
 
-        let theForm = new Form(form);
+        let theForm = new Form(forms[name]);
         return theForm.render();
     });
 }
