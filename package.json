@@ -7,7 +7,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "bump": "npm --no-git-tag-version version"
   },
   "repository": {
     "type": "git",
@@ -23,8 +25,12 @@
     "url": "https://github.com/chrismademe/eleventy-forms/issues"
   },
   "homepage": "https://github.com/chrismademe/eleventy-forms#readme",
-	"dependencies": {
-		"cosmiconfig": "^6.0.0",
-		"lodash": "^4.17.21"
-	}
+  "dependencies": {
+    "cosmiconfig": "^6.0.0",
+    "lodash": "^4.17.21",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
 }
