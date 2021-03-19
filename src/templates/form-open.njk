@@ -1,5 +1,5 @@
 <form
-    class="eleventy-form {{ attributes.className }}"
+    class="{{ attributes.className | join(' ') }}"
     action="{{ attributes.action }}"
     method="{{ attributes.method }}"
 >

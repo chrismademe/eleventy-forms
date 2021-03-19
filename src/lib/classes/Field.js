@@ -3,8 +3,8 @@ const nunjucks = require('nunjucks');
 
 class Field {
     constructor(context = {}) {
-        this.type = context.type || `text`;
         this.context = context;
+        this.type = this.getType();
     }
 
     setup() {
@@ -19,7 +19,7 @@ class Field {
             description: this.context.description || null,
             showLabel: this.context.showLabel || true,
             className: [
-                'field__input',
+                'ef-field__input',
                 ...this.context.className || []
             ]
         }
@@ -27,8 +27,9 @@ class Field {
         // Input Attributes Setup
         field.attributes = {
             ...this.context.attributes,
+            id: this.context.name,
             name: this.context.name,
-            type: this.context.type,
+            type: this.type,
         }
 
         // Select
@@ -37,6 +38,11 @@ class Field {
         }
 
         return field;
+    }
+
+    getType() {
+        let type = this.context.type || 'text';
+        return this.context.name === 'submit' ? 'submit' : type;
     }
 
     getTemplateName(type) {

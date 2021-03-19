@@ -1,0 +1,9 @@
+<div class="ef-field" data-type="{{ attributes.type }}" data-name="{{ attributes.name }}">
+    <input
+    {% for key, value in attributes %}
+    {{ key }}="{{ value }}" {% endfor %}
+    class="{{ html.className | join(' ') }}"
+    >
+    <label for="{{ attributes.name }}">{{ html.label }}</label>
+    {% include "./partials/description.njk" %}
+</div>

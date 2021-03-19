@@ -1,0 +1,3 @@
+.ef-field[data-type='checkbox'] label {
+    user-select: none;
+}

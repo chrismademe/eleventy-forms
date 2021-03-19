@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const path = require('path');
 const nunjucks = require('nunjucks');
+const cleanHtml = require('clean-html');
 const Field = require('./Field');
 
 class Form {
@@ -11,7 +12,7 @@ class Form {
 
     setup() {
         let attributes = {
-            className: [ `eleventy-form`, ...this.form.className || [] ],
+            className: [ `ef`, ...this.form.className || [] ],
             action: this.form.action || `#`,
             method: this.form.method || `post`
         }
@@ -34,7 +35,17 @@ class Form {
         // Closing Markup
         html += nunjucks.render(path.join(__dirname, '/../../templates/form-close.njk'), this.form);
 
-        return html;
+        return this.cleanHtml(html);
+    }
+
+    cleanHtml(input) {
+        let cleanOutput;
+
+        cleanHtml.clean(input, (output) => {
+            cleanOutput = output;
+        });
+
+        return cleanOutput;
     }
 
 }

@@ -1,0 +1,10 @@
+<div class="ef-field" data-type="submit">
+    {% include "./partials/description.njk" %}
+    <button
+        {% for key, value in attributes %}
+        {{ key }}="{{ value }}" {% endfor %}
+        class="{{ html.className | join(' ') }}"
+        >
+        {{ html.label }}
+    </button>
+</div>

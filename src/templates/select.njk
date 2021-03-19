@@ -1,4 +1,4 @@
-<div class="field" data-type="{{ attributes.type }}" data-name="{{ attributes.name }}">
+<div class="ef-field" data-type="{{ attributes.type }}" data-name="{{ attributes.name }}">
     {% include "./partials/label.njk" %}
     {% include "./partials/description.njk" %}
     <select class="{{ html.className | join(' ') }}" {% for key, value in attributes %}{{ key }}="{{ value }}" {% endfor %}>
