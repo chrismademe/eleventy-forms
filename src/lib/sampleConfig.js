@@ -2,7 +2,7 @@ module.exports = {
 	name: 'Contact Form',
 	attributes: {
 		method: 'get',
-		className: 'p-12 space-y-3',
+		class: 'p-12 space-y-3',
 		postform: '',
 	},
 	fields: [
@@ -27,7 +27,7 @@ module.exports = {
 		{
 			name: 'submit',
 			label: 'Send',
-			className: ['px-6', 'py-2', 'bg-blue-700', 'text-blue-100', 'rounded'],
+			class: ['px-6', 'py-2', 'bg-blue-700', 'text-blue-100', 'rounded'],
 		},
 	],
 };

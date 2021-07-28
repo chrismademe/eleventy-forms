@@ -4,6 +4,6 @@
     <input
         {% for key, value in attributes %}
         {{ key }}="{{ value }}" {% endfor %}
-        class="{{ html.className | join(' ') }}"
+        class="{{ html.class | join(' ') }}"
         >
 </div>

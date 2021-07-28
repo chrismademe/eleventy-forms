@@ -1,7 +1,7 @@
 <div class="ef-field" data-type="{{ attributes.type }}" data-name="{{ attributes.name }}">
     {% include "./partials/label.njk" %}
     {% include "./partials/description.njk" %}
-    <select class="{{ html.className | join(' ') }}" {% for key, value in attributes %}{{ key }}="{{ value }}" {% endfor %}>
+    <select class="{{ html.class | join(' ') }}" {% for key, value in attributes %}{{ key }}="{{ value }}" {% endfor %}>
         {% for name, value in options %}
             <option value="{{ name }}">{{ value }}</option>
         {% endfor %}

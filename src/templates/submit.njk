@@ -2,7 +2,8 @@
     {% include "./partials/description.njk" %}
     <button
         {% for key, value in attributes %}
-        {{ key }}="{{ value }}" {% endfor %}
+        {% if not key == "id" %}{{ key }}="{{ value }}" {% endif %}
+        {% endfor %}
         class="{{ html.className | join(' ') }}"
         >
         {{ html.label }}

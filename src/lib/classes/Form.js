@@ -11,7 +11,7 @@ class Form {
 
 	setup() {
 		let attributes = {
-			className: [`ef`, ...(this.form.className || [])],
+			class: [`ef`, ...(this.form.class || [])],
 			action: this.form.action || `#`,
 			method: this.form.method || `post`,
 		};

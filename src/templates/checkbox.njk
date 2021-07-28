@@ -2,7 +2,7 @@
     <input
     {% for key, value in attributes %}
     {{ key }}="{{ value }}" {% endfor %}
-    class="{{ html.className | join(' ') }}"
+    class="{{ html.class | join(' ') }}"
     >
     <label for="{{ attributes.name }}">{{ html.label }}</label>
     {% include "./partials/description.njk" %}
