@@ -1,37 +1,37 @@
 {
-  "name": "eleventy-plugin-forms",
-  "version": "0.2.0",
-  "description": "An Eleventy Plugin that marks up simple forms for you",
-  "main": ".eleventy.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "dev": "eleventy --serve",
-    "build": "eleventy",
-    "bump": "npm --no-git-tag-version version"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chrismademe/eleventy-forms.git"
-  },
-  "keywords": [
-    "eleventy",
-    "eleventy-plugin"
-  ],
-  "author": "Chris Galbraith",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chrismademe/eleventy-forms/issues"
-  },
-  "homepage": "https://github.com/chrismademe/eleventy-forms#readme",
-  "dependencies": {
-    "clean-html": "^1.5.0",
-    "cosmiconfig": "^6.0.0",
-    "lodash": "^4.17.21",
-    "nunjucks": "^3.2.3"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
-  }
+	"name": "eleventy-plugin-forms",
+	"version": "0.4.0",
+	"description": "An Eleventy Plugin that marks up simple forms for you",
+	"main": ".eleventy.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"dev": "eleventy --serve",
+		"build": "eleventy",
+		"bump": "npm --no-git-tag-version version"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chrismademe/eleventy-forms.git"
+	},
+	"keywords": [
+		"eleventy",
+		"eleventy-plugin"
+	],
+	"author": "Chris Galbraith",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/chrismademe/eleventy-forms/issues"
+	},
+	"homepage": "https://github.com/chrismademe/eleventy-forms#readme",
+	"dependencies": {
+		"clean-html": "^1.5.0",
+		"cosmiconfig": "^6.0.0",
+		"lodash": "^4.17.21",
+		"nunjucks": "^3.2.3"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^0.11.1"
+	}
 }

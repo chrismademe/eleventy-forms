@@ -5,49 +5,55 @@ const cleanHtml = require('clean-html');
 const Field = require('./Field');
 
 class Form {
+	constructor(form) {
+		this.form = form;
+	}
 
-    constructor(form) {
-        this.form = form;
-    }
+	setup() {
+		let attributes = {
+			className: [`ef`, ...(this.form.className || [])],
+			action: this.form.action || `#`,
+			method: this.form.method || `post`,
+		};
 
-    setup() {
-        let attributes = {
-            className: [ `ef`, ...this.form.className || [] ],
-            action: this.form.action || `#`,
-            method: this.form.method || `post`
-        }
+		return attributes;
+	}
 
-        return attributes;
-    }
+	render() {
+		let htmlAttributes = this.setup();
 
-    render() {
-        // Opening Markup
-        let html = nunjucks.render(path.join(__dirname, '/../../templates/form-open.njk'), {
-            form: this.form,
-            attributes: this.setup()
-        });
+		// Opening Markup
+		let html = nunjucks.render(
+			path.join(__dirname, '/../../templates/form-open.njk'),
+			{
+				form: this.form,
+				attributes: { ...htmlAttributes, ...this.form.attributes },
+			}
+		);
 
-        _.each(this.form.fields, (field) => {
-            let theField = new Field(field);
-            html += theField.render();
-        });
+		_.each(this.form.fields, (field) => {
+			let theField = new Field(field);
+			html += theField.render();
+		});
 
-        // Closing Markup
-        html += nunjucks.render(path.join(__dirname, '/../../templates/form-close.njk'), this.form);
+		// Closing Markup
+		html += nunjucks.render(
+			path.join(__dirname, '/../../templates/form-close.njk'),
+			this.form
+		);
 
-        return this.cleanHtml(html);
-    }
+		return this.cleanHtml(html);
+	}
 
-    cleanHtml(input) {
-        let cleanOutput;
+	cleanHtml(input) {
+		let cleanOutput;
 
-        cleanHtml.clean(input, (output) => {
-            cleanOutput = output;
-        });
+		cleanHtml.clean(input, (output) => {
+			cleanOutput = output;
+		});
 
-        return cleanOutput;
-    }
-
+		return cleanOutput;
+	}
 }
 
 module.exports = Form;

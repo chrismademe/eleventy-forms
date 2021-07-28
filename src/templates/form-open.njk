@@ -1,5 +1,5 @@
 <form
-    class="{{ attributes.className | join(' ') }}"
-    action="{{ attributes.action }}"
-    method="{{ attributes.method }}"
+{% for name, value in attributes %}
+    {{ name }}="{{ value }}"
+{% endfor %}
 >
