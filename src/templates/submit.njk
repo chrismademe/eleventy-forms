@@ -4,7 +4,7 @@
         {% for key, value in attributes %}
         {% if not key == "id" %}{{ key }}="{{ value }}" {% endif %}
         {% endfor %}
-        class="{{ html.className | join(' ') }}"
+        class="{{ html.class | join(' ') }}"
         >
         {{ html.label }}
     </button>
